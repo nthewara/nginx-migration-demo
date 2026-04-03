@@ -1,0 +1,4 @@
+subscription_id = "<your-subscription-id>"
+location        = "australiaeast"
+prefix          = "nginxmig"
+node_vm_size    = "Standard_D4s_v3"
