@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2026-04-03T09:35:00.000Z" agent="OpenClaw" version="24.7.17" type="device">
+<mxfile host="app.diagrams.net" modified="2026-04-03T09:48:00.000Z" agent="OpenClaw" version="24.7.17" type="device">
   <diagram id="nginx-migration-arch" name="Architecture">
     <mxGraphModel dx="1600" dy="980" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
       <root>
@@ -30,22 +30,22 @@
           <mxGeometry x="60" y="790" width="1580" height="150" as="geometry"/>
         </mxCell>
         <mxCell id="acr" value="" style="shape=mxgraph.azure2.containers.container_registries;fillColor=#0078D4;strokeColor=#005A9E;" vertex="1" parent="1">
-          <mxGeometry x="180" y="840" width="56" height="56" as="geometry"/>
+          <mxGeometry x="120" y="838" width="56" height="56" as="geometry"/>
         </mxCell>
         <mxCell id="acrText" value="Azure Container Registry&#xa;Stores sample app images" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;fontColor=#1E293B;fontSize=12;arcSize=10;" vertex="1" parent="1">
-          <mxGeometry x="250" y="836" width="190" height="62" as="geometry"/>
+          <mxGeometry x="190" y="834" width="200" height="62" as="geometry"/>
         </mxCell>
         <mxCell id="tf" value="Terraform" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#10B981;fontColor=#065F46;fontSize=14;fontStyle=1;arcSize=12;" vertex="1" parent="1">
-          <mxGeometry x="720" y="840" width="140" height="56" as="geometry"/>
+          <mxGeometry x="675" y="846" width="140" height="50" as="geometry"/>
         </mxCell>
         <mxCell id="tfText" value="Deploys 5 AKS clusters&#xa;+ shared infra" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;fontColor=#1E293B;fontSize=12;arcSize=10;" vertex="1" parent="1">
-          <mxGeometry x="875" y="836" width="170" height="62" as="geometry"/>
+          <mxGeometry x="835" y="834" width="180" height="62" as="geometry"/>
         </mxCell>
         <mxCell id="sampleApp" value="Sample Web App" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#F97316;fontColor=#9A3412;fontSize=14;fontStyle=1;arcSize=12;" vertex="1" parent="1">
-          <mxGeometry x="1270" y="840" width="160" height="56" as="geometry"/>
+          <mxGeometry x="1250" y="846" width="160" height="50" as="geometry"/>
         </mxCell>
         <mxCell id="sampleText" value="Deployed to all 4 migration clusters&#xa;Starts behind NGINX ingress" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;fontColor=#1E293B;fontSize=12;arcSize=10;" vertex="1" parent="1">
-          <mxGeometry x="1445" y="836" width="170" height="62" as="geometry"/>
+          <mxGeometry x="1430" y="834" width="185" height="62" as="geometry"/>
         </mxCell>
 
         <mxCell id="cluster1" value="Scenario 1 — NGINX → AGC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#3B82F6;fontColor=#1E3A8A;fontSize=14;fontStyle=1;arcSize=16;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
@@ -136,50 +136,118 @@
           <mxGeometry x="1260" y="670" width="260" height="42" as="geometry"/>
         </mxCell>
 
-        <mxCell id="e-internet-monitor" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6366F1;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="internet" target="monitorGroup">
+        <mxCell id="e-internet-monitor" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6366F1;strokeWidth=2;endArrow=classic;endFill=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="internet" target="monitorGroup">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="e-monitor-c1" value="health / uptime" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;dashed=1;endArrow=classic;endFill=1;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="monitorGroup" target="cluster1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e-monitor-c1" value="health / uptime" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;dashed=1;endArrow=classic;endFill=1;fontSize=11;fontColor=#475569;exitX=0.08;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="monitorGroup" target="cluster1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="606" y="365"/>
+              <mxPoint x="240" y="365"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="e-monitor-c2" value="health / uptime" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;dashed=1;endArrow=classic;endFill=1;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="monitorGroup" target="cluster2">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e-monitor-c2" value="health / uptime" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;dashed=1;endArrow=classic;endFill=1;fontSize=11;fontColor=#475569;exitX=0.32;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="monitorGroup" target="cluster2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="745" y="365"/>
+              <mxPoint x="630" y="365"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="e-monitor-c3" value="health / uptime" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;dashed=1;endArrow=classic;endFill=1;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="monitorGroup" target="cluster3">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e-monitor-c3" value="health / uptime" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;dashed=1;endArrow=classic;endFill=1;fontSize=11;fontColor=#475569;exitX=0.68;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="monitorGroup" target="cluster3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="955" y="365"/>
+              <mxPoint x="1020" y="365"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="e-monitor-c4" value="health / uptime" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;dashed=1;endArrow=classic;endFill=1;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="monitorGroup" target="cluster4">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e-monitor-c4" value="health / uptime" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;dashed=1;endArrow=classic;endFill=1;fontSize=11;fontColor=#475569;exitX=0.92;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="monitorGroup" target="cluster4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1094" y="365"/>
+              <mxPoint x="1410" y="365"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
 
-        <mxCell id="e-acr-c1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#94A3B8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="acrText" target="cluster1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e-acr-c1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#94A3B8;strokeWidth=2;endArrow=classic;endFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.3;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="acrText" target="cluster1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="290" y="780"/>
+              <mxPoint x="170" y="780"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="e-acr-c2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#94A3B8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="acrText" target="cluster2">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e-acr-c2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#94A3B8;strokeWidth=2;endArrow=classic;endFill=1;exitX=0.95;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="acrText" target="cluster2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="415" y="865"/>
+              <mxPoint x="415" y="780"/>
+              <mxPoint x="540" y="780"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="e-acr-c3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#94A3B8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="acrText" target="cluster3">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e-acr-c3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#94A3B8;strokeWidth=2;endArrow=classic;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.2;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="acrText" target="cluster3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="865"/>
+              <mxPoint x="390" y="760"/>
+              <mxPoint x="915" y="760"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="e-acr-c4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#94A3B8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="acrText" target="cluster4">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e-acr-c4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#94A3B8;strokeWidth=2;endArrow=classic;endFill=1;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0.2;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="acrText" target="cluster4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="875"/>
+              <mxPoint x="390" y="748"/>
+              <mxPoint x="1305" y="748"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
 
-        <mxCell id="e-tf-clusters" value="provisions" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#10B981;strokeWidth=2;endArrow=classic;endFill=1;fontSize=11;fontColor=#065F46;" edge="1" parent="1" source="tf" target="monitorGroup">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e-tf-clusters" value="provisions" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#10B981;strokeWidth=2;endArrow=classic;endFill=1;fontSize=11;fontColor=#065F46;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.52;entryY=1;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="tf" target="monitorGroup">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="745" y="760"/>
+              <mxPoint x="860" y="760"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="e-app-c1" value="baseline app" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F97316;strokeWidth=2;endArrow=classic;endFill=1;fontSize=11;fontColor=#9A3412;" edge="1" parent="1" source="sampleApp" target="cluster1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e-app-c1" value="baseline app" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F97316;strokeWidth=2;endArrow=classic;endFill=1;fontSize=11;fontColor=#9A3412;exitX=0.1;exitY=0;exitDx=0;exitDy=0;entryX=0.78;entryY=1;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="sampleApp" target="cluster1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1266" y="760"/>
+              <mxPoint x="350" y="760"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="e-app-c2" value="baseline app" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F97316;strokeWidth=2;endArrow=classic;endFill=1;fontSize=11;fontColor=#9A3412;" edge="1" parent="1" source="sampleApp" target="cluster2">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e-app-c2" value="baseline app" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F97316;strokeWidth=2;endArrow=classic;endFill=1;fontSize=11;fontColor=#9A3412;exitX=0.22;exitY=0;exitDx=0;exitDy=0;entryX=0.8;entryY=1;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="sampleApp" target="cluster2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1285" y="772"/>
+              <mxPoint x="720" y="772"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="e-app-c3" value="baseline app" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F97316;strokeWidth=2;endArrow=classic;endFill=1;fontSize=11;fontColor=#9A3412;" edge="1" parent="1" source="sampleApp" target="cluster3">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e-app-c3" value="baseline app" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F97316;strokeWidth=2;endArrow=classic;endFill=1;fontSize=11;fontColor=#9A3412;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.8;entryY=1;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="sampleApp" target="cluster3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1330" y="760"/>
+              <mxPoint x="1110" y="760"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="e-app-c4" value="baseline app" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F97316;strokeWidth=2;endArrow=classic;endFill=1;fontSize=11;fontColor=#9A3412;" edge="1" parent="1" source="sampleApp" target="cluster4">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e-app-c4" value="baseline app" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F97316;strokeWidth=2;endArrow=classic;endFill=1;fontSize=11;fontColor=#9A3412;exitX=0.72;exitY=0;exitDx=0;exitDy=0;entryX=0.65;entryY=1;entryDx=0;entryDy=0;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="sampleApp" target="cluster4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1370" y="760"/>
+              <mxPoint x="1465" y="760"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
 
         <mxCell id="legend" value="Migration pattern used across all four clusters: deploy NGINX first, run both old and new paths in parallel where possible, validate cutover, then remove NGINX." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;fontColor=#334155;fontSize=12;arcSize=12;align=left;spacingLeft=12;" vertex="1" parent="1">
