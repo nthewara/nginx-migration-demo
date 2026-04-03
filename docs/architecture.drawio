@@ -1,0 +1,191 @@
+<mxfile host="app.diagrams.net" modified="2026-04-03T09:35:00.000Z" agent="OpenClaw" version="24.7.17" type="device">
+  <diagram id="nginx-migration-arch" name="Architecture">
+    <mxGraphModel dx="1600" dy="980" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="AKS NGINX Ingress Migration Demo" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=26;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="520" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="Professional architecture view of the 5-cluster lab: four migration paths plus a central fleet monitor" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="40" y="58" width="760" height="24" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="internet" value="Users / Test Traffic" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F2FE;strokeColor=#0284C7;fontColor=#0C4A6E;fontSize=14;fontStyle=1;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry x="760" y="95" width="180" height="56" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="monitorGroup" value="Fleet Monitor Cluster&#xa;Observability + uptime dashboard" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF2FF;strokeColor=#6366F1;fontColor=#312E81;fontSize=14;fontStyle=1;arcSize=16;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="560" y="185" width="580" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="monitorAks" value="" style="shape=mxgraph.azure2.compute.kubernetes_services;fillColor=#0078D4;strokeColor=#005A9E;" vertex="1" parent="1">
+          <mxGeometry x="595" y="232" width="58" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="monitorText" value="AKS Monitor Cluster&#xa;• Fleet Monitor UI&#xa;• Watches all 4 migration clusters&#xa;• Shows downtime / cutover state" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C7D2FE;fontColor=#1E293B;fontSize=12;arcSize=12;align=left;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="675" y="218" width="420" height="84" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="platformBand" value="Shared platform resources" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;fontColor=#334155;fontSize=13;fontStyle=1;arcSize=12;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="790" width="1580" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="acr" value="" style="shape=mxgraph.azure2.containers.container_registries;fillColor=#0078D4;strokeColor=#005A9E;" vertex="1" parent="1">
+          <mxGeometry x="180" y="840" width="56" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="acrText" value="Azure Container Registry&#xa;Stores sample app images" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;fontColor=#1E293B;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="250" y="836" width="190" height="62" as="geometry"/>
+        </mxCell>
+        <mxCell id="tf" value="Terraform" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#10B981;fontColor=#065F46;fontSize=14;fontStyle=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="720" y="840" width="140" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="tfText" value="Deploys 5 AKS clusters&#xa;+ shared infra" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;fontColor=#1E293B;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="875" y="836" width="170" height="62" as="geometry"/>
+        </mxCell>
+        <mxCell id="sampleApp" value="Sample Web App" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#F97316;fontColor=#9A3412;fontSize=14;fontStyle=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="840" width="160" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="sampleText" value="Deployed to all 4 migration clusters&#xa;Starts behind NGINX ingress" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;fontColor=#1E293B;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1445" y="836" width="170" height="62" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="cluster1" value="Scenario 1 — NGINX → AGC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#3B82F6;fontColor=#1E3A8A;fontSize=14;fontStyle=1;arcSize=16;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="390" width="360" height="340" as="geometry"/>
+        </mxCell>
+        <mxCell id="c1aks" value="" style="shape=mxgraph.azure2.compute.kubernetes_services;fillColor=#0078D4;strokeColor=#005A9E;" vertex="1" parent="1">
+          <mxGeometry x="90" y="438" width="58" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="c1nginx" value="Starting state&#xa;NGINX Ingress" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;fontColor=#0F172A;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="165" y="430" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="c1agc" value="Target state&#xa;Application Gateway for Containers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;fontColor=#1E3A8A;fontSize=12;fontStyle=1;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="165" y="510" width="170" height="68" as="geometry"/>
+        </mxCell>
+        <mxCell id="c1gateway" value="Gateway API&#xa;+ HTTPRoute" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#0F172A;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="90" y="600" width="118" height="54" as="geometry"/>
+        </mxCell>
+        <mxCell id="c1waf" value="WAF-enabled edge" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#EF4444;fontColor=#991B1B;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="225" y="600" width="110" height="54" as="geometry"/>
+        </mxCell>
+        <mxCell id="c1note" value="Public-facing workload migration&#xa;Managed ingress + strong security posture" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="90" y="670" width="250" height="42" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="cluster2" value="Scenario 2 — NGINX → Istio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F3FF;strokeColor=#8B5CF6;fontColor=#5B21B6;fontSize=14;fontStyle=1;arcSize=16;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="450" y="390" width="360" height="340" as="geometry"/>
+        </mxCell>
+        <mxCell id="c2aks" value="" style="shape=mxgraph.azure2.compute.kubernetes_services;fillColor=#0078D4;strokeColor=#005A9E;" vertex="1" parent="1">
+          <mxGeometry x="480" y="438" width="58" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="c2nginx" value="Starting state&#xa;NGINX Ingress" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;fontColor=#0F172A;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="555" y="430" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="c2istio" value="Target state&#xa;Istio service mesh" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;fontColor=#581C87;fontSize=12;fontStyle=1;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="555" y="510" width="150" height="68" as="geometry"/>
+        </mxCell>
+        <mxCell id="c2mtls" value="mTLS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAE8FF;strokeColor=#D946EF;fontColor=#86198F;fontSize=12;fontStyle=1;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="480" y="600" width="90" height="54" as="geometry"/>
+        </mxCell>
+        <mxCell id="c2vs" value="VirtualService&#xa;+ traffic policy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#0F172A;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="590" y="600" width="125" height="54" as="geometry"/>
+        </mxCell>
+        <mxCell id="c2note" value="Internal / platform-heavy workloads&#xa;Traffic management + observability" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="480" y="670" width="260" height="42" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="cluster3" value="Scenario 3 — NGINX → App Routing Addon" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#10B981;fontColor=#065F46;fontSize=14;fontStyle=1;arcSize=16;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="840" y="390" width="360" height="340" as="geometry"/>
+        </mxCell>
+        <mxCell id="c3aks" value="" style="shape=mxgraph.azure2.compute.kubernetes_services;fillColor=#0078D4;strokeColor=#005A9E;" vertex="1" parent="1">
+          <mxGeometry x="870" y="438" width="58" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="c3nginx" value="Starting state&#xa;Self-managed NGINX" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;fontColor=#0F172A;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="945" y="430" width="128" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="c3addon" value="Target state&#xa;App Routing addon" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#059669;fontColor=#065F46;fontSize=12;fontStyle=1;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="945" y="510" width="140" height="68" as="geometry"/>
+        </mxCell>
+        <mxCell id="c3class" value="IngressClass switch" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#0F172A;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="870" y="600" width="115" height="54" as="geometry"/>
+        </mxCell>
+        <mxCell id="c3parallel" value="Parallel controllers&#xa;for cutover" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEFCE8;strokeColor=#EAB308;fontColor=#854D0E;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1005" y="600" width="120" height="54" as="geometry"/>
+        </mxCell>
+        <mxCell id="c3note" value="Best as a bridge / quick win&#xa;Managed NGINX path with limited runway" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="870" y="670" width="260" height="42" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="cluster4" value="Scenario 4 — NGINX → Envoy Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#F97316;fontColor=#9A3412;fontSize=14;fontStyle=1;arcSize=16;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="390" width="360" height="340" as="geometry"/>
+        </mxCell>
+        <mxCell id="c4aks" value="" style="shape=mxgraph.azure2.compute.kubernetes_services;fillColor=#0078D4;strokeColor=#005A9E;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="438" width="58" height="58" as="geometry"/>
+        </mxCell>
+        <mxCell id="c4nginx" value="Starting state&#xa;NGINX Ingress" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;fontColor=#0F172A;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1335" y="430" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="c4envoy" value="Target state&#xa;Envoy Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#EA580C;fontColor=#9A3412;fontSize=12;fontStyle=1;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1335" y="510" width="140" height="68" as="geometry"/>
+        </mxCell>
+        <mxCell id="c4gapi" value="Gateway API&#xa;+ HTTPRoute" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#0F172A;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="600" width="118" height="54" as="geometry"/>
+        </mxCell>
+        <mxCell id="c4cncf" value="CNCF standard" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF1F2;strokeColor=#FB7185;fontColor=#9F1239;fontSize=12;fontStyle=1;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1395" y="600" width="100" height="54" as="geometry"/>
+        </mxCell>
+        <mxCell id="c4note" value="Gateway API-first migration path&#xa;Portable, modern ingress architecture" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="670" width="260" height="42" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e-internet-monitor" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6366F1;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="internet" target="monitorGroup">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e-monitor-c1" value="health / uptime" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;dashed=1;endArrow=classic;endFill=1;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="monitorGroup" target="cluster1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-monitor-c2" value="health / uptime" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;dashed=1;endArrow=classic;endFill=1;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="monitorGroup" target="cluster2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-monitor-c3" value="health / uptime" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;dashed=1;endArrow=classic;endFill=1;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="monitorGroup" target="cluster3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-monitor-c4" value="health / uptime" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=2;dashed=1;endArrow=classic;endFill=1;fontSize=11;fontColor=#475569;" edge="1" parent="1" source="monitorGroup" target="cluster4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e-acr-c1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#94A3B8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="acrText" target="cluster1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-acr-c2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#94A3B8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="acrText" target="cluster2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-acr-c3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#94A3B8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="acrText" target="cluster3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-acr-c4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#94A3B8;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="1" source="acrText" target="cluster4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e-tf-clusters" value="provisions" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#10B981;strokeWidth=2;endArrow=classic;endFill=1;fontSize=11;fontColor=#065F46;" edge="1" parent="1" source="tf" target="monitorGroup">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-app-c1" value="baseline app" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F97316;strokeWidth=2;endArrow=classic;endFill=1;fontSize=11;fontColor=#9A3412;" edge="1" parent="1" source="sampleApp" target="cluster1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-app-c2" value="baseline app" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F97316;strokeWidth=2;endArrow=classic;endFill=1;fontSize=11;fontColor=#9A3412;" edge="1" parent="1" source="sampleApp" target="cluster2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-app-c3" value="baseline app" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F97316;strokeWidth=2;endArrow=classic;endFill=1;fontSize=11;fontColor=#9A3412;" edge="1" parent="1" source="sampleApp" target="cluster3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e-app-c4" value="baseline app" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F97316;strokeWidth=2;endArrow=classic;endFill=1;fontSize=11;fontColor=#9A3412;" edge="1" parent="1" source="sampleApp" target="cluster4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="legend" value="Migration pattern used across all four clusters: deploy NGINX first, run both old and new paths in parallel where possible, validate cutover, then remove NGINX." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;fontColor=#334155;fontSize=12;arcSize=12;align=left;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="955" width="1580" height="48" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
